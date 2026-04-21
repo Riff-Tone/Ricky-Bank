@@ -1,0 +1,112 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="Banking_member_page.Site1" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="<%= ResolveUrl("~/../Page6/src/Images/bank_browser_official.ico") %>" />
+    <title><%: Page.Title %> - Ricky Bank</title>
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #222;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar a {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 15px 0;
+            border-top: 1px solid #ccc;
+            color: #555;
+        }
+        .logo {
+            height: 70px;
+            margin-right: 15px;
+        }
+        .btn-logout {
+            background-color: #f2f2f2;
+            color: #555;
+            border: 1px solid #ccc;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-logout:hover {
+            background-color: #e6e6e6;
+        }
+        .nav-left {
+            display: flex;
+            align-items: center;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <header>
+            <div class="navbar">
+                <div class="nav-left">
+                    <a runat="server" href="~/Member_home_page.aspx" class="brand">
+                        <img runat="server" src="~/../Page6/src/Images/bank_logo_official.png" class="logo" />
+                    </a>
+                    <a runat="server" href="~/Member_home_page.aspx">Home</a>
+                    <a runat="server" href="~/Member_transaction_page.aspx">Make a Transaction</a>
+                </div>
+
+                <div>
+                    <asp:Button ID="Member_page_logout_btn" runat="server" Text="Log Out" CssClass="btn-logout" PostBackUrl="../Page3/Default.aspx" />
+                </div>
+
+            </div>
+        </header>
+
+        <div class="container">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - Cse445 group 151 </p>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
