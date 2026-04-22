@@ -22,6 +22,6 @@ To access staff Page
   local   : ~/../Page5/Staff_home_page.aspx
 
 to access Images 
- local  : ~/../Page6/src/Images/
+ local  : ~/../Page6/Images/
   
  
